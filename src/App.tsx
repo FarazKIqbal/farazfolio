@@ -8,7 +8,6 @@ import {
   Check,
   Code2,
   Download,
-  ExternalLink,
   Github,
   GraduationCap,
   Linkedin,
