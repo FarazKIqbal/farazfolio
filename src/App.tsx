@@ -290,7 +290,6 @@ function Contact() {
   const [status, setStatus] = useState<{ kind: "success" | "error"; message: string } | null>(null);
   const config = useContactConfig();
   const contactEmail = config?.contactEmail ?? "";
-  const contactPhone = config?.contactPhone ?? "";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
