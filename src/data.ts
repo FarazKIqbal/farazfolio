@@ -16,7 +16,6 @@ export const navigation = [
   { label: "Work", href: "#work" },
   { label: "Skills", href: "#skills" },
   { label: "Journey", href: "#journey" },
-  { label: "Writing", href: "#writing" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -37,7 +36,7 @@ export const projects = [
     number: "01",
     name: "FairScore",
     category: "Responsible AI · Fintech",
-    role: "Software Developer",
+    role: "Student project",
     description:
       "An explainable credit-scoring system for people with limited credit history, designed to make credit-line evaluation clearer and fairer.",
     technologies: ["Python", "LightGBM", "Random Forest", "Transformers", "React.js", "REST API", "Explainable AI"],
@@ -47,7 +46,7 @@ export const projects = [
     number: "02",
     name: "FraudGuard",
     category: "Applied ML · AdTech",
-    role: "Project Lead & Full Stack Developer",
+    role: "Academic project",
     description:
       "A machine-learning system built to detect and prevent click fraud in digital advertising in real time.",
     technologies: ["Python", "Flask", "React.js", "REST API", "TensorFlow"],
@@ -57,7 +56,7 @@ export const projects = [
     number: "03",
     name: "DocQA Chatbot",
     category: "RAG · Knowledge tools",
-    role: "Software Developer",
+    role: "Learning project",
     description:
       "Upload a PDF, ask a question in plain language, and get an answer grounded in the document with source-page citations.",
     technologies: ["Python", "Claude API", "ChromaDB", "Sentence Transformers", "Streamlit"],
@@ -67,7 +66,7 @@ export const projects = [
     number: "04",
     name: "group.ai",
     category: "Conversational AI",
-    role: "Software Developer",
+    role: "Student project",
     description:
       "A personalized recommendation chatbot combining conversational understanding with a focused React experience.",
     technologies: ["IBM Watson Assistant", "IBM Cloud", "React", "Watson NLP"],
@@ -77,7 +76,7 @@ export const projects = [
     number: "05",
     name: "HomeCareConnect",
     category: "Full-stack · Marketplace",
-    role: "Backend Developer",
+    role: "Practice project",
     description:
       "A home-services booking platform connecting customers with the help they need, backed by a Firebase-powered workflow.",
     technologies: ["Python", "React", "Node.js", "Firebase"],
@@ -90,42 +89,42 @@ export const skillGroups = [
     title: "Languages",
     index: "01",
     skills: [
-      { name: "Python", value: 88 },
-      { name: "C", value: 68 },
-      { name: "C++", value: 64 },
-      { name: "Java", value: 62 },
+      { name: "Python", value: 70 },
+      { name: "C", value: 55 },
+      { name: "C++", value: 45 },
+      { name: "Java", value: 50 },
     ],
   },
   {
     title: "AI / Machine Learning",
     index: "02",
     skills: [
-      { name: "Machine Learning", value: 84 },
-      { name: "TensorFlow", value: 76 },
-      { name: "LightGBM", value: 76 },
-      { name: "Transformers", value: 70 },
-      { name: "RAG", value: 78 },
-      { name: "Explainable AI", value: 80 },
+      { name: "Machine Learning", value: 65 },
+      { name: "TensorFlow", value: 50 },
+      { name: "LightGBM", value: 45 },
+      { name: "Transformers", value: 40 },
+      { name: "RAG", value: 45 },
+      { name: "Explainable AI", value: 50 },
     ],
   },
   {
     title: "Web / Backend",
     index: "03",
     skills: [
-      { name: "React.js", value: 82 },
-      { name: "Flask", value: 78 },
-      { name: "Node.js", value: 72 },
-      { name: "REST APIs", value: 76 },
-      { name: "Firebase", value: 72 },
+      { name: "React.js", value: 60 },
+      { name: "Flask", value: 55 },
+      { name: "Node.js", value: 45 },
+      { name: "REST APIs", value: 50 },
+      { name: "Firebase", value: 55 },
     ],
   },
   {
     title: "Tools",
     index: "04",
     skills: [
-      { name: "ChromaDB", value: 76 },
-      { name: "Streamlit", value: 78 },
-      { name: "IBM Cloud", value: 68 },
+      { name: "ChromaDB", value: 35 },
+      { name: "Streamlit", value: 55 },
+      { name: "IBM Cloud", value: 40 },
     ],
   },
 ];
@@ -163,26 +162,3 @@ export const milestones = [
   },
 ];
 
-export const articles = [
-  {
-    number: "01",
-    topic: "Explainable AI",
-    read: "Technical note",
-    title: "Building Explainable Credit Scoring with LightGBM",
-    description: "A practical look at making risk signals easier to inspect and explain.",
-  },
-  {
-    number: "02",
-    topic: "Retrieval-augmented generation",
-    read: "Build log",
-    title: "How I Built a RAG Chatbot with ChromaDB and the Claude API",
-    description: "From document chunks and embeddings to grounded, page-cited answers.",
-  },
-  {
-    number: "03",
-    topic: "Real-time ML",
-    read: "Engineering note",
-    title: "Detecting Click Fraud with TensorFlow",
-    description: "Thinking through a machine-learning pipeline for a fast-moving signal.",
-  },
-];

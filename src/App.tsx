@@ -5,7 +5,6 @@ import {
   ArrowRight,
   ArrowUpRight,
   Award,
-  BookOpen,
   Check,
   Code2,
   Download,
@@ -21,7 +20,7 @@ import {
   Send,
   X,
 } from "lucide-react";
-import { articles, milestones, navigation, projects, skillGroups, softSkills, technologyStack } from "./data";
+import { milestones, navigation, projects, skillGroups, softSkills, technologyStack } from "./data";
 
 const emailAddress = "farazkarukappadathiqbal.mec@gmail.com";
 const phoneNumber = "+91 94006 78650";
@@ -244,26 +243,6 @@ function Journey() {
   );
 }
 
-function Writing() {
-  return (
-    <section className="writing-section section-wrap section-block" id="writing" aria-labelledby="section-title-05">
-      <SectionHeading index="05" eyebrow="Notes from the build" title="Ideas worth unpacking." detail="Three technical article concepts, ready to grow into full write-ups." />
-      <div className="article-grid">
-        {articles.map((article) => (
-          <article className="article-card" key={article.number}>
-            <div className="article-meta"><span>{article.number} / NOTE</span><span>{article.read}</span></div>
-            <div className="article-icon"><BookOpen size={18} /></div>
-            <span className="article-topic">{article.topic}</span>
-            <h3>{article.title}</h3>
-            <p>{article.description}</p>
-            <div className="article-footer"><span>ARTICLE IN PROGRESS</span><ArrowUpRight size={15} aria-hidden="true" /></div>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function ResumeAction() {
   const resumePath = "/resume.pdf";
   const [message, setMessage] = useState("");
@@ -391,7 +370,6 @@ export default function App() {
         <Work />
         <Skills />
         <Journey />
-        <Writing />
         <Contact />
       </main>
       <Footer />

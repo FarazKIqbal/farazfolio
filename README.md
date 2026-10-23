@@ -30,7 +30,6 @@ I needed a place to present the work I've done — FairScore, FraudGuard, DocQA 
 - **Selected work** — five projects spanning explainable AI, fraud detection, RAG chatbots, conversational AI, and full-stack marketplaces.
 - **Skills & tools** — proficiency panels organized by domain (languages, AI/ML, web/backend, tools).
 - **Recognition** — Top 12 AI Chatbot Innovation (650+ projects), IBM SkillsBuild certifications, and workshop participation.
-- **Writing** — three technical article concepts in progress (explainable credit scoring, RAG pipelines, real-time ML).
 - **Contact form** — a working `/api/contact` endpoint with rate limiting, honeypot spam protection, and Elastic Email delivery.
 - **Resume download** — click-to-download PDF, with graceful fallback when the file isn't present.
 
