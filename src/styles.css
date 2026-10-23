@@ -27,9 +27,10 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; background: var(--bg); }
-body { margin: 0; min-width: 320px; background: var(--bg); color: var(--white); user-select: none; -webkit-user-select: none; }
+body { margin: 0; min-width: 320px; background: var(--bg); color: var(--white); user-select: none; -webkit-user-select: none; caret-color: transparent; }
 body::before { position: fixed; inset: 0; z-index: -1; pointer-events: none; content: ""; background: radial-gradient(ellipse at 72% 4%, rgba(37, 74, 39, 0.16), transparent 31%), radial-gradient(ellipse at 10% 52%, rgba(26, 41, 32, 0.12), transparent 33%); }
-button, input, textarea { font: inherit; user-select: text; }
+button, input, textarea { font: inherit; user-select: text; caret-color: auto; }
+a, p, span, h1, h2, h3, h4, h5, h6, div { caret-color: transparent; }
 a { color: inherit; text-decoration: none; }
 button { color: inherit; }
 ::selection { color: var(--bg); background: var(--green); }
