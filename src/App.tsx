@@ -15,7 +15,6 @@ import {
   Mail,
   MapPin,
   Menu,
-  Phone,
   Send,
   X,
 } from "lucide-react";
@@ -26,7 +25,6 @@ const linkedInUrl = "https://www.linkedin.com/in/faraz-k-iqbal";
 
 interface ContactInfo {
   contactEmail: string;
-  contactPhone: string;
 }
 
 function useContactConfig(): ContactInfo | null {
@@ -35,7 +33,7 @@ function useContactConfig(): ContactInfo | null {
     fetch("/api/config")
       .then((r) => r.json())
       .then(setConfig)
-      .catch(() => setConfig({ contactEmail: "", contactPhone: "" }));
+      .catch(() => setConfig({ contactEmail: "" }));
   }, []);
   return config;
 }
