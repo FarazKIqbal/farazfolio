@@ -90,8 +90,8 @@ function Hero() {
           <a className="button button-quiet" href="#contact">Let’s talk <ArrowRight size={17} /></a>
         </div>
         <div className="hero-socials">
-          <a href={githubUrl} target="_blank" rel="noreferrer noopener"><Github size={16} /> GitHub <span className="placeholder-label">replace link</span><ArrowUpRight size={13} /></a>
-          <a href={linkedInUrl} target="_blank" rel="noreferrer noopener"><Linkedin size={16} /> LinkedIn <span className="placeholder-label">replace link</span><ArrowUpRight size={13} /></a>
+          <a href={githubUrl} target="_blank" rel="noreferrer noopener"><Github size={16} /> GitHub <span className="placeholder-label"></span><ArrowUpRight size={13} /></a>
+          <a href={linkedInUrl} target="_blank" rel="noreferrer noopener"><Linkedin size={16} /> LinkedIn <span className="placeholder-label"></span><ArrowUpRight size={13} /></a>
         </div>
       </div>
 
@@ -149,7 +149,7 @@ function About() {
               <strong>B.Tech, Computer Science</strong>
               <p>Govt. Model Engineering College, Kochi</p>
             </div>
-            <div className="education-score"><span>CGPA</span><strong>8.4</strong></div>
+            <div className="education-score"><span>CGPA</span><strong>8.41</strong></div>
           </div>
           <div className="location-line"><MapPin size={14} /> Kodungallur, Thrissur, Kerala <span>·</span> Recent B.Tech graduate</div>
         </div>
@@ -172,9 +172,6 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       <p className="project-description">{project.description}</p>
       <div className="tag-list" aria-label={`${project.name} technologies`}>
         {project.technologies.map((tech) => <span className="tech-tag" key={tech}>{tech}</span>)}
-      </div>
-      <div className="project-links">
-        <a href={`https://github.com/FarazKIqbal/${project.slug}`} target="_blank" rel="noreferrer noopener">Repository <Github size={14} /></a>
       </div>
     </article>
   );
@@ -350,6 +347,7 @@ function Footer() {
         <p>Designed with intent <span>·</span> Kodungallur, Kerala</p>
         <a className="back-to-top" href="#top">Back to top <ArrowUpRight size={14} /></a>
         <span className="copyright">© {new Date().getFullYear()} FARAZ KARUKAPPADATH IQBAL</span>
+        <a className="footer-link" href="/privacy.html">Privacy Policy</a>
       </div>
     </footer>
   );
