@@ -9,8 +9,8 @@ import { createServer as createViteServer } from "vite";
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const httpServer = createHttpServer(app);
-const recipientEmail = process.env.CONTACT_EMAIL || "farazkarukappadathiqbal.mec@gmail.com";
-const contactPhone = process.env.CONTACT_PHONE || "+91 94006 78650";
+const recipientEmail = process.env.CONTACT_EMAIL || "";
+const contactPhone = process.env.CONTACT_PHONE || "";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // Public config endpoint — serves contact info from env vars (not in source)
