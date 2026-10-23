@@ -330,7 +330,6 @@ function Contact() {
         <div className="contact-details">
           <p className="contact-lede">The most interesting work starts with a clear question. Tell me what you’re building.</p>
           <a className="contact-detail-link" href={`mailto:${contactEmail}`}><span className="contact-icon"><Mail size={17} /></span><span><small>EMAIL</small><strong>{contactEmail}</strong></span><ArrowUpRight size={15} /></a>
-          <a className="contact-detail-link" href={`tel:${contactPhone.replace(/\s+/g, "")}`}><span className="contact-icon"><Phone size={17} /></span><span><small>PHONE</small><strong>{contactPhone}</strong></span><ArrowUpRight size={15} /></a>
           <div className="contact-detail-link no-link"><span className="contact-icon"><MapPin size={17} /></span><span><small>LOCATION</small><strong>Kodungallur, Thrissur, Kerala</strong></span></div>
           <div className="contact-availability"><span className="availability-dot" /><span>Open to AI/ML and full-stack opportunities</span></div>
           <ResumeAction />
