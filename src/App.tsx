@@ -25,8 +25,8 @@ import { articles, milestones, navigation, projects, skillGroups, softSkills, te
 
 const emailAddress = "farazkarukappadathiqbal.mec@gmail.com";
 const phoneNumber = "+91 94006 78650";
-const githubUrl = "https://github.com/your-username";
-const linkedInUrl = "https://www.linkedin.com/in/your-profile";
+const githubUrl = "https://github.com/FarazKIqbal";
+const linkedInUrl = "www.linkedin.com/in/faraz-k-iqbal";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -175,10 +175,12 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       <div className="tag-list" aria-label={`${project.name} technologies`}>
         {project.technologies.map((tech) => <span className="tech-tag" key={tech}>{tech}</span>)}
       </div>
+      {/*
       <div className="project-links">
         <a href={`https://demo.example/${project.slug}`} target="_blank" rel="noreferrer noopener">Live demo <ExternalLink size={14} /><span className="link-placeholder">placeholder</span></a>
         <a href={`https://github.com/your-username/${project.slug}`} target="_blank" rel="noreferrer noopener">Repository <Github size={14} /><span className="link-placeholder">placeholder</span></a>
       </div>
+      */}
     </article>
   );
 }
