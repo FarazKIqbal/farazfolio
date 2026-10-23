@@ -275,7 +275,7 @@ function ResumeAction() {
       <button className="button button-outline" type="button" onClick={() => void handleResumeDownload()} disabled={checking} aria-busy={checking}>
         {checking ? <>Checking file <LoaderCircle size={15} className="spin" /></> : <>Download resume <Download size={16} /></>}
       </button>
-      <span className="resume-placeholder">PDF placeholder · public/resume.pdf</span>
+      <span className="resume-placeholder"></span>
       {message && <span className="resume-message" role="status">{message}</span>}
     </div>
   );
