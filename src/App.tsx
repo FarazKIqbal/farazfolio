@@ -197,7 +197,6 @@ function Skills() {
   return (
     <section className="skills-section section-wrap section-block" id="skills" aria-labelledby="section-title-03">
       <SectionHeading index="03" eyebrow="Technical range" title="A toolkit for the full loop." detail="From shaping a model to shipping the interface around it." />
-      <div className="skills-note"><span className="note-asterisk">*</span> Proficiency bars are editable starting points; tune them to your own assessment before publishing.</div>
       <div className="skills-grid">
         {skillGroups.map((group) => (
           <article className="skill-card" key={group.index}>
@@ -206,7 +205,7 @@ function Skills() {
               {group.skills.map((skill) => (
                 <div className="skill-row" key={skill.name}>
                   <div className="skill-label"><span>{skill.name}</span><span className="skill-percent">{skill.value}%</span></div>
-                  <div className="skill-track" role="img" aria-label={`${skill.name}: illustrative ${skill.value}% proficiency indicator`}>
+                  <div className="skill-track" role="img" aria-label={`${skill.name}: ${skill.value}% proficiency`}>
                     <span className="skill-fill" style={{ "--skill-value": `${skill.value}%` } as CSSProperties} />
                   </div>
                 </div>
