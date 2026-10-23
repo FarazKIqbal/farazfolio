@@ -1,4 +1,4 @@
-import { useState, type FormEvent, type CSSProperties } from "react";
+import { useEffect, useState, type FormEvent, type CSSProperties } from "react";
 import {
   ArrowDown,
   ArrowDownRight,
@@ -21,10 +21,24 @@ import {
 } from "lucide-react";
 import { milestones, navigation, projects, skillGroups, softSkills, technologyStack } from "./data";
 
-const emailAddress = "farazkarukappadathiqbal.mec@gmail.com";
-const phoneNumber = "+91 94006 78650";
 const githubUrl = "https://github.com/FarazKIqbal";
 const linkedInUrl = "https://www.linkedin.com/in/faraz-k-iqbal";
+
+interface ContactInfo {
+  contactEmail: string;
+  contactPhone: string;
+}
+
+function useContactConfig(): ContactInfo | null {
+  const [config, setConfig] = useState<ContactInfo | null>(null);
+  useEffect(() => {
+    fetch("/api/config")
+      .then((r) => r.json())
+      .then(setConfig)
+      .catch(() => setConfig({ contactEmail: "", contactPhone: "" }));
+  }, []);
+  return config;
+}
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -276,6 +290,9 @@ function ResumeAction() {
 function Contact() {
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<{ kind: "success" | "error"; message: string } | null>(null);
+  const config = useContactConfig();
+  const contactEmail = config?.contactEmail ?? "";
+  const contactPhone = config?.contactPhone ?? "";
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -312,8 +329,8 @@ function Contact() {
       <div className="contact-layout">
         <div className="contact-details">
           <p className="contact-lede">The most interesting work starts with a clear question. Tell me what you’re building.</p>
-          <a className="contact-detail-link" href={`mailto:${emailAddress}`}><span className="contact-icon"><Mail size={17} /></span><span><small>EMAIL</small><strong>{emailAddress}</strong></span><ArrowUpRight size={15} /></a>
-          <a className="contact-detail-link" href="tel:+919400678650"><span className="contact-icon"><Phone size={17} /></span><span><small>PHONE</small><strong>{phoneNumber}</strong></span><ArrowUpRight size={15} /></a>
+          <a className="contact-detail-link" href={`mailto:${contactEmail}`}><span className="contact-icon"><Mail size={17} /></span><span><small>EMAIL</small><strong>{contactEmail}</strong></span><ArrowUpRight size={15} /></a>
+          <a className="contact-detail-link" href={`tel:${contactPhone.replace(/\s+/g, "")}`}><span className="contact-icon"><Phone size={17} /></span><span><small>PHONE</small><strong>{contactPhone}</strong></span><ArrowUpRight size={15} /></a>
           <div className="contact-detail-link no-link"><span className="contact-icon"><MapPin size={17} /></span><span><small>LOCATION</small><strong>Kodungallur, Thrissur, Kerala</strong></span></div>
           <div className="contact-availability"><span className="availability-dot" /><span>Open to AI/ML and full-stack opportunities</span></div>
           <ResumeAction />
@@ -331,7 +348,7 @@ function Contact() {
             {sending ? <>Sending <LoaderCircle size={16} className="spin" /></> : <>Send message <Send size={16} /></>}
           </button>
           {status && <p className={`form-status ${status.kind}`} role="status" aria-live="polite">{status.kind === "success" ? <Check size={15} /> : <Mail size={15} />}{status.message}</p>}
-          <p className="form-footnote">Your message is sent directly to Faraz. Prefer email? <a href={`mailto:${emailAddress}`}>Write to him here.</a></p>
+          <p className="form-footnote">Your message is sent directly to Faraz. Prefer email? <a href={`mailto:${contactEmail}`}>Write to him here.</a></p>
         </form>
       </div>
     </section>

@@ -10,3 +10,6 @@ npm-debug.log*
 .rederive/
 TODO.md
 skills-lock.json
+
+# Local Netlify folder
+.netlify

@@ -9,8 +9,17 @@ import { createServer as createViteServer } from "vite";
 const projectRoot = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const httpServer = createHttpServer(app);
-const recipientEmail = "farazkarukappadathiqbal.mec@gmail.com";
+const recipientEmail = process.env.CONTACT_EMAIL || "farazkarukappadathiqbal.mec@gmail.com";
+const contactPhone = process.env.CONTACT_PHONE || "+91 94006 78650";
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// Public config endpoint — serves contact info from env vars (not in source)
+app.get("/api/config", (_request, response) => {
+  response.json({
+    contactEmail: recipientEmail,
+    contactPhone: contactPhone,
+  });
+});
 
 app.disable("x-powered-by");
 app.set("trust proxy", 1);
